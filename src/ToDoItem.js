@@ -6,7 +6,7 @@ function ToDoItem(item) {
     <div className="todo-item">
       <input
         type="checkbox"
-        onChange={() => console.log("Poop")}
+        onChange={() => item.handleChange(item.item.id)}
         checked={item.item.completed}
       />
       <p>{item.item.text}</p>
