@@ -13,7 +13,7 @@ class Clock extends Component {
         this.setState({
           date: new Date()
         }),
-      0
+      1000
     );
   }
 

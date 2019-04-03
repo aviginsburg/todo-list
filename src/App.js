@@ -2,21 +2,13 @@ import React, { Component } from "react";
 import TimeofDay from "./TimeofDay";
 import ToDoItem from "./ToDoItem";
 import todosData from "./todosData";
-import Moment from "react-moment";
-import "moment-timezone";
 
 class App extends Component {
-  constructor() {
-    super();
+  state = {
+    todos: todosData
+  };
 
-    this.state = {
-      todos: todosData
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(id) {
+  handleChange = id => {
     this.setState(prevState => {
       const updatedTodos = prevState.todos.map(todo => {
         if (todo.id === id) {
@@ -28,7 +20,7 @@ class App extends Component {
         todos: updatedTodos
       };
     });
-  }
+  };
 
   render() {
     const ToDoItems = this.state.todos.map(item => (
